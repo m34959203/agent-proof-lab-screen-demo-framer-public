@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "fa39171e920e7a9536abfb1fb31f88f154af4ff05340c8a1d6a09c0300183c04",
+  "source": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "duration": 24.266992
+  },
+  "start": 0,
+  "end": 20,
+  "shots": [
+    {
+      "start": 0,
+      "end": 4.5,
+      "mode": "crop",
+      "crop": {
+        "x": 656,
+        "y": 0,
+        "width": 576,
+        "height": 1024
+      }
+    },
+    {
+      "start": 4.5,
+      "end": 20,
+      "mode": "crop",
+      "crop": {
+        "x": 1260,
+        "y": 32,
+        "width": 576,
+        "height": 1024
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {inspect,exportArgs,run} from './media.mjs';
+import {validatePlan} from './plan.mjs';
+const base=path.dirname(fileURLToPath(import.meta.url));
+const file=path.join(base,'example/source.mp4'), output=path.join(base,'example-check.mp4');
+if(!process.env.FFMPEG||!process.env.FFPROBE)throw Error('Set FFMPEG and FFPROBE to existing trusted binaries.');
+try{await fs.access(output);throw Error('example-check.mp4 exists; choose a clean directory.');}catch(e){if(e.code!=='ENOENT')throw e;}
+const bytes=await fs.readFile(file),sha256=createHash('sha256').update(bytes).digest('hex');
+const metadata=await inspect(file,process.env.FFPROBE);
+const plan=validatePlan(JSON.parse(await fs.readFile(path.join(base,'example/shot-plan.json'))),{...metadata,sha256});
+await run(process.env.FFMPEG,exportArgs(file,plan,metadata.audio,output));
+const probe=JSON.parse(await run(process.env.FFPROBE,['-v','error','-show_streams','-show_format','-of','json',output]));
+const v=probe.streams.find(s=>s.codec_type==='video');
+assert.equal(v.width,1080);assert.equal(v.height,1920);assert.equal(Number(v.nb_frames),600);assert.equal(Number(probe.format.duration),20);
+await run(process.env.FFMPEG,['-v','error','-i',output,'-f','null','-']);
+assert.equal(createHash('sha256').update(await fs.readFile(file)).digest('hex'),sha256);
+console.log(JSON.stringify({sourceSha256:sha256,shots:plan.shots.length,durationSeconds:20,frames:600,fullDecode:true,sourceUnchanged:true,scope:'Producer example reproduction, not independent acceptance'}));

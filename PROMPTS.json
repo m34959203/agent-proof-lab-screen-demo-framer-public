@@ -1,0 +1,96 @@
+{
+  "scope": "Actual retained instruction excerpts, not newly invented interactive prompts. Original model submission UI unavailable.",
+  "sanitization": "Only the product contract paragraph is quoted verbatim; infrastructure and private route paths omitted. Full raw conversations and hidden reasoning excluded.",
+  "tool": "Codex worker; GPT-6 family as identified by original session ledger; exact model snapshot not recorded",
+  "records": [
+    {
+      "id": "BUILD-01",
+      "dateUtc": "2026-10-19",
+      "baseline": "empty product",
+      "actualInstructionExcerpt": "Make a useful local single-user Screen Demo Framer: owned landscapeMP4, explicit continuous20\u201360second range,1\u20136shots each >=1second, fixed manually selected9:16 source crop OR Fit with padding per shot, intentional hard cuts only. One versioned strictly validated plan drives preview/export. Preserve source bytes, save/reopenJSON only with matching sourceSHA. No automatic tracking, no smooth keyframes, no subtitles engine/cloud/model runtime/social uploading. Warn about upscaling, do not promise pixels can be restored. Keep optional source audio. Input contract1920x1080/2560x1440,CFR25/30,H264MP4,squareSAR,rotation0,<=300seconds/500MiB,none or oneAAC track; explicitly reject unsupported media instead of pretending universal support. Output1080x1920/30fps/H264yuv420p andAACwhenpresent. Use exact agreed boundaries, narrow only with explicit recorded blocker/controller decision, not silent claim changes.",
+      "context": "Frozen product plan and existing source checkpoint; excerpt of continuing instruction, not a separate invented prompt",
+      "sourceResponseFiles": [
+        {
+          "file": "app.mjs",
+          "sha256": "8c697bda952a62ea569b42e7a847f33401a69c233b6b769870e2afbddba13299"
+        },
+        {
+          "file": "geometry.mjs",
+          "sha256": "ac8d8ebb1f3b56ca4d6ca3adb29a8a3327d026516091638fa298c4c3e806755f"
+        },
+        {
+          "file": "index.html",
+          "sha256": "1cb02017bebfeb748f8c11cceccc3e1bff3a5aae2d0c6ad5b92adacf25d22480"
+        },
+        {
+          "file": "media.mjs",
+          "sha256": "35b3c2a9bef40e9599582302e2d09736c54fadba639b9d747f61ae8cdb1d2ea0"
+        },
+        {
+          "file": "package.json",
+          "sha256": "2b7d6213071eaeb7c3efbaae799ee9b27def8ab80f31b180a4a16cd1ca821419"
+        },
+        {
+          "file": "plan.mjs",
+          "sha256": "bcd0f51f3cb4bcb35ad6871f94f02d714a53697cf6d027cb9076ab18ec89edbe"
+        },
+        {
+          "file": "server.mjs",
+          "sha256": "2bbc3ab1298f8132361f719e05cbae966f9573ba692e53f86a16c9c50d4c7236"
+        },
+        {
+          "file": "style.css",
+          "sha256": "ea1735c81434d4b5a5e873caee5b7a263c212c318d5c5d8d8dfc4354d8bfcb1f"
+        },
+        {
+          "file": "test.mjs",
+          "sha256": "b1f1c775afc1794d827feddeb382cd2af9cbb66bf392e955b28851db6c1f0dd5"
+        }
+      ],
+      "observedResult": "Core prototype, geometry and schema tests pass",
+      "recordingLimitation": "Actual source application and command output retained; model submission UI not recorded."
+    },
+    {
+      "id": "BUILD-02",
+      "dateUtc": "2026-10-19",
+      "baseline": "BUILD-01 response plus prior applied changes",
+      "actualInstructionExcerpt": "Make a useful local single-user Screen Demo Framer: owned landscapeMP4, explicit continuous20\u201360second range,1\u20136shots each >=1second, fixed manually selected9:16 source crop OR Fit with padding per shot, intentional hard cuts only. One versioned strictly validated plan drives preview/export. Preserve source bytes, save/reopenJSON only with matching sourceSHA. No automatic tracking, no smooth keyframes, no subtitles engine/cloud/model runtime/social uploading. Warn about upscaling, do not promise pixels can be restored. Keep optional source audio. Input contract1920x1080/2560x1440,CFR25/30,H264MP4,squareSAR,rotation0,<=300seconds/500MiB,none or oneAAC track; explicitly reject unsupported media instead of pretending universal support. Output1080x1920/30fps/H264yuv420p andAACwhenpresent. Use exact agreed boundaries, narrow only with explicit recorded blocker/controller decision, not silent claim changes.",
+      "context": "Frozen product plan and existing source checkpoint; excerpt of continuing instruction, not a separate invented prompt",
+      "sourceResponseFiles": [
+        {
+          "file": "media.mjs",
+          "sha256": "94352352071e5980ef41a45f0c9cfc86f0065e7c8c68dab1dfbea0e2f28f2eab"
+        },
+        {
+          "file": "server.mjs",
+          "sha256": "4f58f1e2d439acf3bb6c27747403279b0ffc72a2b0a92082be85144a5a943443"
+        },
+        {
+          "file": "style.css",
+          "sha256": "7e6e13525204c4e03bfba7885b340510bc6ade5a4c49a8daa1c1b065c03e79c3"
+        }
+      ],
+      "observedResult": "Observed mobile preview too small; enlarged; focus and error feedback improved",
+      "recordingLimitation": "Actual source application and command output retained; model submission UI not recorded."
+    },
+    {
+      "id": "BUILD-03",
+      "dateUtc": "2026-10-19",
+      "baseline": "BUILD-02 response plus prior applied changes",
+      "actualInstructionExcerpt": "Make a useful local single-user Screen Demo Framer: owned landscapeMP4, explicit continuous20\u201360second range,1\u20136shots each >=1second, fixed manually selected9:16 source crop OR Fit with padding per shot, intentional hard cuts only. One versioned strictly validated plan drives preview/export. Preserve source bytes, save/reopenJSON only with matching sourceSHA. No automatic tracking, no smooth keyframes, no subtitles engine/cloud/model runtime/social uploading. Warn about upscaling, do not promise pixels can be restored. Keep optional source audio. Input contract1920x1080/2560x1440,CFR25/30,H264MP4,squareSAR,rotation0,<=300seconds/500MiB,none or oneAAC track; explicitly reject unsupported media instead of pretending universal support. Output1080x1920/30fps/H264yuv420p andAACwhenpresent. Use exact agreed boundaries, narrow only with explicit recorded blocker/controller decision, not silent claim changes.",
+      "context": "Frozen product plan and existing source checkpoint; excerpt of continuing instruction, not a separate invented prompt",
+      "sourceResponseFiles": [
+        {
+          "file": "media.mjs",
+          "sha256": "643234968ef1bc37cb281694eed67a8b0670b61e9d3141393e8d2b719d87c4ec"
+        },
+        {
+          "file": "server.mjs",
+          "sha256": "02a6f6688d1b27db236d7dc495d37067e5acfa04d8d960f72f2416945bf731b8"
+        }
+      ],
+      "observedResult": "Observed request reservation race fixed; captured helper cwd failure; subsequent same-input retest409",
+      "recordingLimitation": "Actual source application and command output retained; model submission UI not recorded."
+    }
+  ]
+}
