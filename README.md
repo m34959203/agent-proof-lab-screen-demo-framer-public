@@ -23,7 +23,7 @@ Open `http://127.0.0.1:4177`. The demonstrated shell was Linux Bash; PowerShell 
 
 The output is 1080×1920, 30 fps, H.264/yuv420p, with AAC when the source contains audio. Hard cuts only. Source bytes are not rewritten. Cancelled or failed jobs do not expose partial downloads.
 
-This is a single-user prototype, not a production or security certification. Maximum-size/disk-full testing and a complete accessibility audit are outstanding. Exact earlier visual-pilot checks are scoped evidence only; independent final video-plus-kit reproduction and final release reviews remain outstanding. The public companion and full episode are not approved or published.
+This is a single-user prototype, not a production or security certification. Maximum-size/disk-full testing and a complete accessibility audit are outstanding. Exact earlier visual-pilot checks are scoped evidence only; independent final video-plus-kit reproduction and final release reviews remain outstanding. Publication status as of 2026-10-22: the prior companion snapshot is publicly available at the fixed repository version linked below. Full episode acceptance and release remain separate controller gates. This documentation correction is a new review candidate until separately published.
 
 
 ## Repeat the shown result
@@ -34,8 +34,19 @@ After starting the server, open the example MP4. Set From **0** and To **20**, t
 
 For a deterministic, non-browser check of this exact example, run `node verify-example.mjs` with the same FFMPEG and FFPROBE variables. It validates the source and plan and writes `example-check.mp4` only if that filename does not already exist. This is a producer-supplied reproduction helper, not an independent usability verdict.
 
+## Recover after a source mismatch
+
+If Reopen plan reports “Plan version or source SHA does not match”:
+
+1. Reload the browser page. Keep your saved plan JSON; unsaved edits are not recovered by a reload.
+2. Import the exact original MP4 used when you saved that plan, and wait for the source to load. A re-encoded copy or a file with changed bytes is not the same source, even if the picture looks identical.
+3. Choose **Reopen plan** and select the saved JSON again. For the supplied example, use `example/source.mp4` and `example/shot-plan.json`; both shots should return with “Plan reopened with matching source SHA.”
+4. Check the shots and preview the range before exporting again.
+
+Repeatedly selecting the same plan filename without reloading may not trigger the file-input change event. Reloading first is the verified workaround; this documentation update does not fix that handler or provide automatic recovery. The earlier retry without a reload failed and remains a known limitation. Automated browser checking verified the reload/import/reopen sequence with the supplied example; it is not human usability validation or a validation/security guarantee.
+
 ## Recording and AI disclosure
 
 The product was authored by a Codex worker; the terminal recording shows actual source application, commands and tests in Bash through an xterm.js browser PTY. It does not show the original model submission UI or continuous model generation, and is not native PowerShell. The poster demonstration was captured later with automated browser input and an instrumented pointer. Manual numeric framing is not AI tracking. Read PROMPTS.json for retained actual instruction excerpts and observed failures. The explanation will distinguish original source-application footage from later demonstrations.
 
-This package is a **local review candidate**, not evidence of a published repository or final acceptance. Model output is not guaranteed to repeat identically. No new paid service was used in this revision; historical subscription costs are not measured here.
+This documentation-corrected package is a **review candidate**. The earlier companion snapshot was published on 2026-10-22; availability is not final episode acceptance. Fixed earlier public version: https://github.com/m34959203/agent-proof-lab-screen-demo-framer-public/tree/bae673db64508257a0419d486a3dbf9ee70300af. Model output is not guaranteed to repeat identically. No new paid service was used in this revision; historical subscription costs are not measured here.
